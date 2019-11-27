@@ -2,5 +2,10 @@ package admin
 
 class DepositOperationController {
 
-    def index() { }
+    def index() { 
+    
+    }
+    def getDepositsPerMonth(){
+        
+    }
 }
