@@ -63,10 +63,10 @@
                       <li><a href="index3.html">Dashboard3</a></li>
                     </ul>
                   </li> --%>
-                    <li><a href="<g:createLink url="[action:'index',controller:'txnCash']" />"><i class="fa fa-institution"></i> Home</a>
+                    <li><a href="<g:createLink url="[action:'index',controller:'home']" />"><i class="fa fa-institution"></i> Home</a>
                     <li><a href="<g:createLink url="[action:'index',controller:'financialInfo']" />"><i class="fa fa-calculator"></i> Financial Information</a>
-                    <li><a href="<g:createLink url="[action:'index',controller:'txnCash']" />"><i class="fa fa-hand-lizard-o"></i>Deposit Operations</a>
-                    <li><a href="<g:createLink url="[action:'index',controller:'txnCash']" />"><i class="fa fa-suitcase"></i>Loan Operations</a>
+                    <li><a href="<g:createLink url="[action:'index',controller:'depositOperation']" />"><i class="fa fa-hand-lizard-o"></i>Deposit Operations</a>
+                    <li><a href="<g:createLink url="[action:'index',controller:'loanOperation']" />"><i class="fa fa-suitcase"></i>Loan Operations</a>
                     <li><a href="<g:createLink url="[action:'index',controller:'txnCash']" />"><i class="fa fa-money"></i>Cash Information</a>
                  
                 </ul>
