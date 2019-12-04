@@ -4,9 +4,13 @@
         <meta name="layout" content="main">
         <title>Home</title>
     </head>
-    <body>
+  <body>
+        <content tag="main-content">
         
          <g:javascript>
+             window.onload = function() {             
+  displayCharts();
+};
               function displayCharts(){   
               totalDepositsPerMonth();
               totalLoansPerMonth();
@@ -270,7 +274,7 @@
             }
 
         </g:javascript>
-        
+                      
                       <button onclick="displayCharts();">Display Charts </button>
                              
         
@@ -393,6 +397,7 @@
                 </div>
             </div>
         </div>
-        
+        </content>
+       
     </body>
 </html>

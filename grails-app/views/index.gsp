@@ -1,176 +1,42 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="layout" content="main">
-        <title>Home</title>
-    </head>
-    <body>
-        
-        <g:javascript>
-
-            function createChart(urldata) {
-            jQuery.get(urldata, function(data) {           
-            var label_ito = [];
-            var data_ito = [];
-            var kulay_ito = [];
-            for (var i = 0; i < data.cols.length ; i++) {
-            label_ito.push(data.cols[i]);           
-            } 
-            for (var i = 0; i < data.rows.length ; i++) {
-            data_ito.push(data.rows[i]);  
-            kulay_ito.push(getRandomColor());  
-            } 
-
-            //=========================DOUGHNUT CHART===================
-            var chartDoughnut = document.getElementById("doughnutChart");
-            var doughnutChart = new Chart(chartDoughnut, {
-            type: 'doughnut',
-            data: {   
-            labels: label_ito,
-            datasets: [{
-            label: 'Transaction per user',
-            backgroundColor: kulay_ito,
-            data: data_ito
-            }]
-            }
-            //             ,options: {           
-            //        maintainAspectRatio: false
-            //            }
-            });
-            console.log('chart created');
-
-
-            //=========================BAR CHART===================
-            var chartBar = document.getElementById("barChart");                  
-
-            var barChart = new Chart(chartBar, {
-            type: 'bar',
-            data: {   
-            labels: label_ito,
-            datasets: [{
-            label: 'Transaction per user',
-            backgroundColor: "blue",
-            data: data_ito
-            }]
-            }
-            ,options: {            
-            
-            maintainAspectRatio: false
-            }
-            });
-            var xAxisLabelMinWidth = 15; // Replace this with whatever value you like
-            var chartCanvas = document.getElementById('barChart');
-            var maxWidth = chartCanvas.parentElement.clientWidth;
-            
-            var width = Math.max(barChart.data.labels.length * xAxisLabelMinWidth, maxWidth);
-
-            chartCanvas.parentElement.style.width = width +'px';
-            console.log('chart created');
-
-
-            //=========================LINE CHART===================
-            var chartLine = document.getElementById("lineChart");                  
-
-            var lineChart = new Chart(chartLine, {
-            type: 'line',
-            data: {   
-            labels: label_ito,
-            datasets: [{
-            label: 'Transaction per user',
-            borderColor: "blue",
-            data: data_ito,
-            fill: false
-            }]
-            }
-            ,options: {            
-           
-            maintainAspectRatio: false
-            }
-
-            });
-            var xAxisLabelMinWidth = 15; // Replace this with whatever value you like
-            var chartCanvas = document.getElementById('lineChart');
-            var maxWidth = chartCanvas.parentElement.clientWidth;
-            var width = Math.max(lineChart.data.labels.length * xAxisLabelMinWidth, maxWidth);
-
-            chartCanvas.parentElement.style.width = width +'px';
-            console.log('chart created');
-
-            })
-            }
-
-
-            function getRandomColor() {
-            var letters = '0123456789ABCDEF';
-            var color = '#';
-            for (var i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-            }
-            return color;
-            }
-
-        </g:javascript>
-        
-<button onclick="createChart('cash/data_1')">Update</button>
-
-        <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                    <div class="row x_title">
-                        <div class="col-md-12">
-                            <h3>Transactions Per User <small>Doughnut Chart</small></h3>
-                        </div>
-                    </div>
-                    <div class="x_content">
-                        <canvas id="doughnutChart"></canvas>
-                    </div>     
-
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                    <div class="row x_title">
-                        <div class="col-md-12">
-                            <h3>Transactions Per User <small>Bar Chart</small></h3>
-                        </div>
-                    </div>
-                   <!-- <div class="x_content">
-                        <canvas id="barChart"></canvas>
-                    </div>    -->
-
-                    <div class="chartWrapper">
-                        <div class="chartContainer">
-                            <canvas id="barChart"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                    <div class="row x_title">
-                        <div class="col-md-12">
-                            <h3>Transactions Per User <small>Line Chart</small></h3>
-                        </div>
-                    </div>
-                    <!--<div class="x_content">
-                        <canvas id="lineChart" width="600" height="400"></canvas>
-                    </div> -->
-
-                    <div class="chartWrapper">
-                        <div class="chartContainer">
-                            <canvas id="lineChart"></canvas>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        
-    </body>
+	<head>
+		<meta name="layout" content="main"/>
+		<title>Welcome to Grails</title>
+	</head>
+	<body>
+    <content tag="main-content">
+      <div id="status" role="complementary">
+        <p>Congratulations, you have successfully started your first Grails application! At the moment
+           this is the default page, feel free to modify it to either redirect to a controller or display whatever
+           content you may choose. Below is a list of controllers that are currently deployed in this application,
+           click on each to execute its default action:</p>
+        <h2>Application Status</h2>
+        <ul>
+          <li>App version: <g:meta name="app.version"/></li>
+          <li>Grails version: <g:meta name="app.grails.version"/></li>
+          <li>Groovy version: ${GroovySystem.getVersion()}</li>
+          <li>JVM version: ${System.getProperty('java.version')}</li>
+          <li>Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</li>
+          <li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
+          <li>Domains: ${grailsApplication.domainClasses.size()}</li>
+          <li>Services: ${grailsApplication.serviceClasses.size()}</li>
+          <li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
+        </ul>
+        <h2>Installed Plugins</h2>
+        <ul>
+          <g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
+            <li>${plugin.name} - ${plugin.version}</li>
+          </g:each>
+        </ul>
+      </div>
+    </content>
+    <content tag="main-actions">
+      <ul>
+        <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
+          <li><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
+        </g:each>
+      </ul>
+    </content>
+	</body>
 </html>

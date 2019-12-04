@@ -5,7 +5,7 @@ dataSource {
 //local
 //password = "postgres"
    
-RB_LEMERY
+//RB_LEMERY
   username = "postgres"
  password = "postgres"
 	  
@@ -55,7 +55,9 @@ environments {
             //url = "jdbc:postgresql://10.252.241.190:5432/ICBS_ATM"
 //             url = "jdbc:postgresql://192.168.254.146:5432/icbs"  //LEMERY PROD
 //                  url = "jdbc:postgresql://192.168.254.146:5432/icbs"
-                url = "jdbc:postgresql://localhost:5432/tarlac"  
+//                url = "jdbc:postgresql://localhost:5433/lemery" 
+//  url = "jdbc:postgresql://192.168.0.4:7477/max_icbs"  
+                 url = "jdbc:postgresql://192.168.0.27:5432/maxbank"  
                
         }
     }
@@ -78,7 +80,9 @@ environments {
             //url = "jdbc:postgresql://10.252.241.190:5432/ICBS_ATM"
           //  url = "jdbc:postgresql://192.168.254.146:5432/test"  //LEMERY PROD
 //                  url = "jdbc:postgresql://192.168.254.146:5432/icbs"
-                 url = "jdbc:postgresql://localhost:5432/tarlac"  
+//                 url = "jdbc:postgresql://localhost:5433/lemery"  
+//                        url = "jdbc:postgresql://192.168.0.4:7477/max_icbs"  
+url = "jdbc:postgresql://192.168.0.27:5432/maxbank"
 //                 url = "jdbc:postgresql://192.168.254.146:5432/icbs"    
         }
     }
@@ -120,7 +124,9 @@ environments {
             //url = "jdbc:postgresql://10.252.241.190:5432/ICBS_ATM"
           //  url = "jdbc:postgresql://192.168.254.146:5432/test"  //LEMERY PROD
 //                  url = "jdbc:postgresql://192.168.254.146:5432/icbs"
-                 url = "jdbc:postgresql://localhost:5432/tarlac"  
+//                 url = "jdbc:postgresql://localhost:5433/lemery"  
+//                 url = "jdbc:postgresql://192.168.0.4:7477/max_icbs" 
+                 url = "jdbc:postgresql://192.168.0.27:5432/maxbank"
 //                url = "jdbc:postgresql://192.168.254.146:5432/icbs" 
         }
     }

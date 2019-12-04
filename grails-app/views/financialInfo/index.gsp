@@ -2,10 +2,10 @@
 <html>
     <head>
         <meta name="layout" content="main">
-        <title>Home</title>
+        <title>GROSS INCOME</title>
     </head>
     <body>
-        
+        <content tag="main-content">
         <g:javascript>
             function callInformation(){
             
@@ -103,6 +103,6 @@
                 </div>
             </div>
         </div>
-        
+        </content>
     </body>
 </html>
